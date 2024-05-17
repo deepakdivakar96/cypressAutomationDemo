@@ -1,0 +1,18 @@
+{
+    "uiBaseUrl": "https://academybugs.com/find-bugs/",
+    "findBugs": {
+        "findbugsEndpoint": "find-bugs/",
+        "checkout": "CHECKOUT NOW",
+        "submitPayment": "SUBMIT PAYMENT",
+        "shoes": "DNK Yellow Shoes"
+    },
+    "productDetailsPage": {
+        "productQty": "0",
+        "productEndpoint": "dnk-yellow-shoes/",
+        "leaveReply": "Leave a Reply",
+        "errorMsg": "Error: Please fill the required fields (name, email)."
+    },
+    "cartPage": {
+        "cartEndpoint": "my-cart/"
+    }
+}

@@ -1,0 +1,68 @@
+image: cypress/base
+stages:          
+  - build
+  - tests
+
+before_script:
+  - echo "Initailsation Before script"
+  - npm install cypress --save-dev
+
+
+build-job:       
+  stage: build
+  script:
+    - echo "Compiling the code..."
+    - npm install 
+    - echo "Compile complete..."
+
+lint-test-job:   
+  stage: tests    
+  script:
+    - echo "Linting code..."
+    - sleep 10
+    - echo "No lint issues found."
+  rules:
+    - when: always
+
+All-test-job:   
+  stage: tests    
+  script: 
+    - echo "Running unit tests..."
+    - npm run test
+    - echo "Test Complete"
+    - sleep 10
+  rules:
+    - when: manual # Run pipeline for all other cases
+  artifacts:
+    when : always
+    paths:
+      - mochawesome-report
+
+UI-test-job:   
+  stage: tests    
+  script: 
+    - echo "Running unit tests..."
+    - npm run uitest
+    - echo "Test Complete"
+    - sleep 10
+  rules:
+    - when: manual # Run pipeline for all other cases
+  artifacts:
+    when : always
+    paths:
+      - mochawesome-report
+
+API-test-job:   
+  stage: tests    
+  script: 
+    - echo "Running unit tests..."
+    - npm run apitest
+    - echo "Test Complete"
+    - sleep 10
+  rules:
+    - when: manual # Run pipeline for all other cases
+  artifacts:
+    when : always
+    paths:
+      - cypress/reports
+    expire_in: 1 week

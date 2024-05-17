@@ -1,0 +1,56 @@
+{
+    "apiBaseUrl": "https://restful-booker.herokuapp.com",
+    "data": {
+        "auth": {
+            "endpoint": "/auth",
+            "body": {
+                "username": "admin",
+                "password": "password123"
+            }
+        },
+
+        "booking": {
+            "endpoint": "/booking",
+            "body": {
+                "firstname": "Jim",
+                "lastname": "Brown",
+                "totalprice": 111,
+                "depositpaid": true,
+                "bookingdates": {
+                    "checkin": "2018-01-01",
+                    "checkout": "2019-01-01"
+                },
+                "additionalneeds": "Breakfast"
+            }
+        },
+        "updatebooking": {
+            "body": {
+                "firstname": "Happy",
+                "lastname": "Mind",
+                "totalprice": 222,
+                "depositpaid": true,
+                "bookingdates": {
+                    "checkin": "2019-01-01",
+                    "checkout": "2020-01-01"
+                },
+                "additionalneeds": "Lunch"
+            }
+        },
+
+
+        "partialUpdatebooking": {
+            "body": {
+                "firstname": "John",
+                "lastname": "smith"
+            }
+        },
+        "ping": {
+            "endpoint": "/ping"
+        },
+
+        "headers": {
+            "Content-Type": "application/json",
+            "Cookie": "token="
+        }
+    }
+}
